@@ -1,0 +1,41 @@
+{
+  "name": "MemoryBasket",
+  "version": "1.0",
+  "description": "MemoryBasket grabs and displays Amazon past history price fluctuations for particular items, revealing terrible, bad, good, and great deals.",
+  "manifest_version": 2,
+  "icons":{
+  		"16": "img/logo.png",
+      "32": "img/logo.png",
+      "48": "img/logo.png",
+      "128": "img/logo.png"
+  	},
+  "default_locale": "en",
+  "minimum_chrome_version": "18",
+  "background": {
+  	"scripts": ["js/background.js"]
+  },
+  "page_action": {
+    "default_icon": "img/logo.png",
+    "default_popup": "html/popup.html",
+    "default_title": "MemoryBasket",
+    "default_name": "MemoryBasket"
+  },
+  "permissions": [
+    "tabs",
+    "https://amazon.com/*"
+  ],
+  "content_security_policy": "default-src 'none'; style-src 'self'; script-src 'self'; object-src 'self'",
+  "web_accessible_resources":[
+    "lib/jquery-2.1.0.min.js",
+    "lib/jquery.mobile.custom.min.js",
+  ],
+  "content_scripts": [
+        {
+            "matches": ["http://*/*"],
+            "js": ["lib/jquery-2.1.0.min.js", "js/memorybasket.js"],
+            "css": ["css/style.css"],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ]
+}
