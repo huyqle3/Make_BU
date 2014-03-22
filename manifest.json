@@ -38,6 +38,7 @@
         },
         {
             "matches": ["http://www.amazon.com/*", "https://www.amazon.com/*"],
+            "exclude_matches": ["http://www.amazon.com/s/*"],
             "js": ["lib/jquery-2.1.0.min.js", "js/memorybasketitem.js"],
             "css": ["css/style.css"],
             "run_at": "document_start",
