@@ -24,6 +24,6 @@ $(document).ready(function(){
 
 function test(link){
 	var selector = "#olpDivId";
-	$(selector).after('<a href="'+link+'"></a><iframe id="iframe" src='+link+' style="width:50%;height:100%;"></iframe>');
-	$('#iframe').css('background-color', 'white');
+	$(selector).after('<a href="' + link +'"></a><iframe id="basket" src='+link+' style="width:100%; height:100%; text-align:center"></iframe>');
+	$('#basket').css('background-color', 'white');
 }
