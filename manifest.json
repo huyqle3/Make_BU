@@ -31,8 +31,15 @@
   ],
   "content_scripts": [
         {
-            "matches": ["http://*/*"],
-            "js": ["lib/jquery-2.1.0.min.js", "js/memorybasket.js"],
+          "matches": ["http://www.amazon.com/s/ref=nb_sb_noss"],
+          "js": ["lib/jquery-2.1.0.min.js", "js/memorybasketlist.js"],
+          "css": ["css/style.css"],
+          "run_at": "document_start",
+          "all_frames": true
+        },
+        {
+            "matches": ["http://www.amazon.com/*", "https://www.amazon.com/*"],
+            "js": ["lib/jquery-2.1.0.min.js", "js/memorybasketitem.js"],
             "css": ["css/style.css"],
             "run_at": "document_start",
             "all_frames": true
